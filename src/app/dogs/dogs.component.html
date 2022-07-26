@@ -1,0 +1,21 @@
+<h1>Animal Shelter</h1>
+<h2>Adoptable Dogs</h2>
+<hr>
+<div class="container">
+    <h3>Dog of the Week</h3>
+    <app-dog-card [dog]="dog" ></app-dog-card>
+</div>
+<hr>
+<hr>
+
+<div>
+    <label for="breed">Dog Breed: </label>
+    <input id="breed" placeholder="breed" #breed>
+    <button (click)="findBreed(breed.value)">Search</button>
+    <button (click)="breed.value=''; getDogs();inputError=''">Reset</button>
+</div>
+<div class="error" *ngIf="inputError">{{inputError}}</div>
+
+<hr>
+
+<app-dog-list [dogs]="dogs"></app-dog-list>
